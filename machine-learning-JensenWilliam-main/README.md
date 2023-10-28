@@ -1,7 +1,6 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/WRI89Flt)
 # BAN400: Problem set for the Machine Learning session
 
-Name: William Jensen
 
 In this lecture, we take a closer look at the term *machine learning* and its various manifestations: Predictive analytics, statistical learning, AI, or whatever you want to call it. There is no clear consensus across disciplines what characteristics define these areas of analysis and distinguish them from each other. For example, a conservative statistician might say that all of this is just nonlinear regression. On the other hand, there has been a strong tendency over the past two or three decades towards predictive models that can best be described as *algorithms* rather than statistical *models*. Maybe a change in terminology is warranted for this reason. Leo Breiman's landmark 2001 paper [Statistical Modeling: The two cultures](https://doi.org/10.1214/ss/1009213726) is a readable account of this distinction from more than twenty years ago. (The title is a nod to "The Two Cultures", an influential book by C.P. Snow that poked into the alleged division between science and the humanities. Read more about that [on this Wikipedia article](https://en.wikipedia.org/wiki/The_Two_Cultures)).
 
@@ -12,11 +11,11 @@ The main objectives of this lesson are:
 
 You can dive into this topic further by following the steps below. This is way more work than what can be done in a week for a single course, so you must choose how you want to spend your time.
 
-**Date:**
+**Date:** 28.10.2023  
 
-**Name:**
+**Name:** William Jensen
 
-**Student number:**
+**Student number:** 194989
 
 ## :information_source: Problem 1
 Update the personal information above.
