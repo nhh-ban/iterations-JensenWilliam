@@ -15,12 +15,3 @@
         }
     }
 }
-
-
-vol_qry = function(id, from, to) 
-  {
-  query = paste0("SELECT * FROM VOLUME_DATA WHERE ID = '", id, 
-                  "' AND DATE_TIME BETWEEN '", from, 
-                  "' AND '", to, "';")
-  return(query)
-}

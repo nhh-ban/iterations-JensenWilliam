@@ -9,8 +9,6 @@ library(lubridate)
 library(anytime)
 library(readr)
 library(yaml)
-library(jsonlite)
-library(httr)
 
 #### 1: Beginning of script
 
@@ -34,10 +32,6 @@ stations_metadata <-
     ) 
 
 
-stations_metadata$trafficRegistrationPoints[1]
-
-
-
 #### 2: Transforming metadata
 
 source("functions/data_transformations.r")
@@ -45,11 +39,6 @@ source("functions/data_transformations.r")
 stations_metadata_df <- 
   stations_metadata %>% 
   transform_metadata_to_df(.)
-
-# Not sure why, but I get error when running these lines^^
-
-# But this works:
-stations_metadata_df = transform_metadata_to_df(stations_metadata[[1]])
 
 
 #### 3: Testing metadata
@@ -60,25 +49,6 @@ test_stations_metadata(stations_metadata_df)
 ### 5: Final volume query: 
 
 source("gql-queries/vol_qry.r")
-
-df <- stations_metadata_df %>% 
-  filter(latestData > Sys.Date() - days(7)) %>% 
-  sample_n(1) %$% 
-  vol_qry(
-    id = id,
-    from = to_iso8601(latestData, -4),
-    to = to_iso8601(latestData, 0)
-  ) %>% 
-  GQL(., .url = configs$vegvesen_url) %>%
-  transform_volumes()
-
-print(sum(is.na(df$from)))
-print(sum(is.na(df$volume)))
-print(sum(is.infinite(df$from)))
-print(sum(is.infinite(df$volume)))
-
-
-
 
 stations_metadata_df %>% 
   filter(latestData > Sys.Date() - days(7)) %>% 
@@ -93,8 +63,6 @@ stations_metadata_df %>%
   ggplot(aes(x=from, y=volume)) + 
   geom_line() + 
   theme_classic()
-
-# Cant get any data to be displayed. I tried finding the error, but with no luck
 
 
 
